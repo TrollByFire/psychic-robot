@@ -35,9 +35,15 @@ function public_file(file_path)
 var server = express();         // Express web server
 var root = express.Router();    // Router to handle the site root
 
-// TODO: Point the default route (site root) at the index.html file
+// Set the root router's default to the index.html page
+root.get('/', function(req, res)
+{
+    res.sendFile(public_file('/views/index.html'));
+});
 
-// TODO: Mount the site root router on the site root
+// Mount the site root router on the site root
+
+server.use('/', root);
 
 // Start the server on the configured port
 
