@@ -24,9 +24,9 @@ var port = config.port;
  * @param path Path to file or directory relative to config.web_root
  * @returns Translated absolute path
  */
-function public_file(path)
+function public_file(file_path)
 {
-    return path.join(web_root, path);
+    return path.join(web_root, file_path);
 }
 
 /**
