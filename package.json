@@ -1,0 +1,19 @@
+{
+  "name": "psychic-robot",
+  "version": "0.0.1-wip",
+  "description": "Psychic-Robot Web Site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrollByFire/psychic-robot.git"
+  },
+  "author": "Glenn Allen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrollByFire/psychic-robot/issues"
+  },
+  "homepage": "https://github.com/TrollByFire/psychic-robot#readme"
+}
