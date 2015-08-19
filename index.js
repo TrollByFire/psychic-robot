@@ -11,10 +11,12 @@ var express = require('express');
 
 /**
  * Configuration:
- * TODO: Move configuration into external json file
+ *
+ * Load config variables from config file and from ENV variables
  */
-var web_root = __dirname + "/public";
-var port = 3000;
+var config = require('./config');
+var web_root = __dirname + config.web_root;
+var port = config.port;
 
 /**
  * Module globals
