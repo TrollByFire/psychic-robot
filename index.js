@@ -7,6 +7,7 @@
  */
 var express = require('express');
 var path = require('path');
+var HomeCtrl = require('./core/controllers/HomeCtrl');
 
 /**
  * Configuration:
@@ -18,35 +19,17 @@ var web_root = path.join(__dirname, config.web_root);
 var port = config.port;
 
 /**
- * @name public_file
- * Translates a file's path relative to the document root to an absolute
- *
- * @param path Path to file or directory relative to config.web_root
- * @returns Translated absolute path
- */
-function public_file(file_path)
-{
-    return path.join(web_root, file_path);
-}
-
-/**
  * Module globals
  */
 var server = express();         // Express web server
-var root = express.Router();    // Router to handle the site root
 
-// Set the root router's default to the index.html page
-root.get('/', function(req, res)
-{
-    res.sendFile(public_file('/views/index.html'));
-});
+// Create a new HomeCtrl object and initialize its root directory
+var Home = new HomeCtrl(web_root);
 
-// Mount the site root router on the site root
-
-server.use('/', root);
+// Mount the default route to the Home controller's router
+server.use('/', Home.Router);
 
 // Start the server on the configured port
-
 server.listen(port);
 
 // Export the module so it can be used within other Node.js applications
