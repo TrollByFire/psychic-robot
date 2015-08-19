@@ -1,4 +1,7 @@
 /**
+ * @file index.js
+ *
+ * Contains the application's entry point.
  *
  */
 
